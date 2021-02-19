@@ -549,15 +549,13 @@ end
     left()
     right()
     end
-    noti("[ fate's admin ]", "Press k to kill, will reset you after.")
+    noti("Leaked Fates V1","press k to kill",10)
     local uis = game:GetService("UserInputService")
     uis.InputBegan:connect(function(inp, GP) if GP then return end
     if inp.KeyCode == Enum.KeyCode.K then
     if CheckClaim(PlayerL) then
     PlayerL.Character.Humanoid.Health = 0
-    for i = 1,5 do
     _G.ungrab = true
-    end
     end
     end
     if _G.ungrab then
@@ -608,17 +606,16 @@ end
     rarm()
     end
     _G.ungrab = false
-    wait(2)
-    game.Players.LocalPlayer.Character:Destroy()
     end
     end)
-    grabbing = game:GetService("RunService").RenderStepped:Connect(function()
-    game:GetService("RunService").RenderStepped:Wait()
+    grabbing = game:GetService("RunService").RenderStepped:Connect(function()   
     if _G.ungrab then 
   grabbing:disconnect()
 	end
     
-        
+        if target.Parent.Humanoid:GetState() == Enum.HumanoidStateType.Dead then
+        _G.ungrab = true
+        end
                
     target.CFrame = lp.CFrame * CFrame.new(-0.7,0,-1.42)
     end)
