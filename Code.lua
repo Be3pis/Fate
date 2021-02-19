@@ -27,19 +27,15 @@ local function noti(title, text, duration)
     game.StarterGui:SetCore("SendNotification", {Title = title; Text = text; Duration = 10})
     end
     local function netcheck()
-    local playertable
+    local playertable = ""
     for i,v in pairs(game:GetService("Players"):GetPlayers()) do
     if gethiddenproperty(v,"SimulationRadius") >= 5000 then
-    playertable = v.Name.." "
+    playertable = playertable.." "..v.Name
     end
     end
     noti("NetCheck",playertable,10)
 
 end
-    local function GC()
-    loadstring(game:HttpGet"https://raw.githubusercontent.com/cool6901/fates-admin/master/Commands.lua")()
-    end
-    
     local function NoclipCurrent()
     for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
     if v:IsA("BasePart") then
