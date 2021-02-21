@@ -1,3 +1,4 @@
+-- Credit to l9nlydoge
 local synapse = syn and not is_sirhurt_closure
 LocalPlayer = game.Players.LocalPlayer
 local Commands = {}
