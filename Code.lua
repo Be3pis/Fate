@@ -68,8 +68,8 @@ tool = LocalPlayer.Backpack:FindFirstChildOfClass("Tool")
     tool.Parent = char
     
     repeat game:GetService("RunService").Heartbeat:wait(0.000000e+9)
-    char:WaitForChild("HumanoidRootPart").CFrame = oldpos + Vector3.new(0,-99999999,0)
-    Player.Character:WaitForChild("HumanoidRootPart").CFrame = char["Right Arm"].CFrame
+    char:WaitForChild("HumanoidRootPart").CFrame = oldpos - Vector3.new(0,999999,0)
+    Player.Character:WaitForChild("HumanoidRootPart").CFrame = tool.Handle.CFrame
     until tool.Parent ~= char
 
 
