@@ -74,10 +74,9 @@ tool = LocalPlayer.Backpack:FindFirstChildOfClass("Tool")
 
 
 
-    for i = 1,10 do
-    wait()
+
     char:WaitForChild("HumanoidRootPart").CFrame = oldpos
-    end
+	wait(.2)
     char:BreakJoints()
     end
 
