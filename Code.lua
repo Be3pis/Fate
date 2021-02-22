@@ -68,16 +68,17 @@ tool = LocalPlayer.Backpack:FindFirstChildOfClass("Tool")
     tool.Parent = char
     
     repeat game:GetService("RunService").Heartbeat:wait(0.000000e+9)
-    char:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(0,-99999999,0)
+    char:WaitForChild("HumanoidRootPart").CFrame = oldpos + Vector3.new(0,-99999999,0)
     Player.Character:WaitForChild("HumanoidRootPart").CFrame = char["Right Arm"].CFrame
     until tool.Parent ~= char
 
 
-	for i = 1,10 do
-	wait()
+
+
     char:WaitForChild("HumanoidRootPart").CFrame = oldpos
-	end
+    wait(.2)
     char:BreakJoints()
+
     end
 
     local function CheckClaim(Player)
